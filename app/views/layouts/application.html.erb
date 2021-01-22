@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memories</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="site-title">
+        <a href="/"><img src="/assets/logo.png" alt="" id="logo"></a>
+      </h1>
+      <nav>
+        <ul class="nav-list-box">
+          <li class="nav-list"><a href="">ABOUT</a></li>
+          <li class="nav-list"><a href="">How to use</a></li>
+          <li class="nav-list"><a href="">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main-visual"></div>
+    <%= yield %>
+    <footer>@2021</footer>
+  </body>
+</html>
