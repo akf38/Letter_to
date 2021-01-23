@@ -1,3 +1,215 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FAF0E6;
+}
+
+/*ヘッダー*/
+header{
+    width: 100%;
+    height: 120px;
+    padding-left:7%;
+    padding-right: 7%;
+    background-color: #FAF0E6;
+    display:flex;
+    font-family: cursive;
+}
+
+#site-title{
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    mix-blend-mode: multiply;
+}
+
+#logo{
+    height:120px;
+}
+
+.nav-list-box{
+    display:flex;
+}
+
+.nav-list{
+    margin-left: 20px;
+     list-style: none;
+}
+
+.nav-list > a{
+    text-decoration: none;
+    line-height: 120px;
+    font-size:25px;
+    font-weight: bold;
+    color: #FF97C2;
+}
+
+/*メインビジュアル*/
+.main-visual{
+    width:100%;
+    height: 400px;
+    background-image: url(img/main-visual1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/*ホーム*/
+.ribbon1 {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 50px;/*リボンの高さ*/
+  line-height: 50px;/*リボンの高さ*/
+  text-align: center;
+  padding: 0;/*横の大きさ*/
+  font-size: 18px;/*文字の大きさ*/
+  background: #f57a78;/*塗りつぶし色*/
+  color: #FFF;/*文字色*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top:20px;
+  font-size:20px;
+}
+
+.ribbon1:before, .ribbon1:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.ribbon1:before {
+  top: 0;
+  left: 0;
+  border-width: 25px 0px 25px 15px;
+  border-color: transparent transparent transparent #FAF0E6;
+  border-style: solid;
+}
+
+.ribbon1:after {
+  top: 0;
+  right: 0;
+  border-width: 25px 15px 25px 0px;
+  border-color: transparent #FAF0E6 transparent transparent;
+  border-style: solid;
+}
+
+
+.top-contents-box{
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    background-color: #FAF0E6;
+}
+
+.top-content {
+  margin: 3em 0 1em 0;
+  border-radius: 8px;
+  box-shadow: 0 0 0 10px #fff6e6;
+  padding: 20px 20px 20px 20px;
+  background-color: #fff6e6;
+  background-image:
+  linear-gradient(90deg, rgba(237, 119, 128, 0) 0%, rgba(237, 119, 128, 0) 50%, #fff6e6 0%, #fff6e6 100%), linear-gradient(180deg, rgba(237, 119, 128, 0) 0%, rgba(237, 119, 128, 0) 95%, #ed7780 100%);
+  background-size: 8px 100%,100% 2em;
+  line-height: 2;
+  color: #ee8992;
+  font-weight: bold;
+  text-align: center;
+}
+.top-content-title {
+  background: #fff6e6;
+  border-radius: 8px 8px 0 0;
+  margin: -20px -20px 20px -20px;
+  font-size: 1.3em;
+  padding: 10px 0 10px 0;
+  color: #ee8992;
+  font-weight:bold;
+  text-align: center;
+}
+.top-content p {
+  margin: 0;
+  padding: 0;
+}
+
+.button{
+    border-radius:5px;
+    background-color: white;
+    width:200px;
+    padding:10px 30px 10px 30px;
+    margin:0 auto;
+    margin-top: 40px;
+    border-color: #f57a78;
+}
+
+.button a {
+    color: #f57a78;
+    text-decoration: none;
+}
+
+/*フッター*/
+footer{
+    margin-top: 30px;
+    padding:20px;
+    text-align: center;
+}
+
+
+
+
+
+
+/*フォーム*/
+.form-box{
+    width:50%;
+    margin: 0 auto;
+    text-align: left;
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+
+label {
+    display:block;
+}
+
+input{
+    width:100%;
+    margin:0 auto;
+    margin-bottom: 30px;
+}
+
+.btn{
+    width:50%;
+    color: white;
+    background-color:#f57a78;
+    display: block;
+    margin: 0 auto;
+    margin-top:20px;
+}
+
+
+/*エラ〜メッセージ*/
+#error_explanation{
+    color:red;
+}
+
+#error_explanation li{
+    margin: 0 0 5px 0;
+}
+
+.field_with_errors{
+    @extend .has-error;
+}
+
+// flashメッセージ
+.alert{
+    text-align:center;
+}
