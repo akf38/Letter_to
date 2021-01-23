@@ -1,6 +1,5 @@
-
 <div class="top-contents-box">
-　 <div class="ribbon1">新規登録</div>
+　 <div class="ribbon1">プロフィール編集</div>
    <div class="form-box">
     <%= form_with(model: @user, local: true) do |f| %>
         
@@ -18,8 +17,9 @@
         <%= f.label :password_confirmation, "パスワード確認" %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
         
-        <%= f.submit "登録する", class: "btn" %>
-        <%= link_to "ご登録がお済みの方は、こちら", login_path %>
+        <%= f.attachment_field :image %>
+        
+        <%= f.submit "保存する", class: "btn" %>
     <% end %>
 </div>
 </div>

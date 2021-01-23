@@ -16,6 +16,11 @@
       </h1>
       <nav>
         <ul class="nav-list-box">
+          <% if logged_in? %>
+          <li class="nav-list"><%= link_to "ログアウト", logout_path, method: :delete %></li>
+          <% else %>
+          <li class="nav-list"><%= link_to "ログイン", login_path %></li>
+          <% end %>
           <li class="nav-list"><a href="">ABOUT</a></li>
           <li class="nav-list"><a href="">How to use</a></li>
           <li class="nav-list"><a href="">CONTACT</a></li>

@@ -1,6 +1,15 @@
 <div class="top-contents-box">
     <div class="ribbon1">プロフィール</div>
     <div class="profile-box">
-        
+        <div class="profile-img-box">
+            <%= attachment_image_tag @user, :image, fallback: "default_user_img.png", size: "150x150" %>
+            <%= link_to "プロフィール編集はこちら", edit_user_path(@user) %>
+        </div>
+        <div class="profile-info-box">
+            <h4>ユーザーネーム</h2>
+            <p><%= @user.name %></p>
+            <h4>メールアドレス</h2>
+            <p><%= @user.email %></p>
+        </div>
     </div>
 </div>
