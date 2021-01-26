@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_023436) do
+ActiveRecord::Schema.define(version: 2021_01_24_103557) do
+
+  create_table "deads", force: :cascade do |t|
+    t.string "name"
+    t.string "dimage_id"
+    t.text "caption"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "letters", force: :cascade do |t|
+    t.string "name"
+    t.text "caption"
+    t.string "limage_id"
+    t.integer "dead_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/login',     to: 'sessions#new'
   post '/login',    to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
+  
+  resources :deads, only: [:new, :create, :edit, :update, :show, :destroy] do
+    resources :letters, only: [:new, :create, :show, :destroy]
+  end
 end
 

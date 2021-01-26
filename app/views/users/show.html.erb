@@ -12,4 +12,19 @@
             <p><%= @user.email %></p>
         </div>
     </div>
+    <div class="ribbon1">レターボックス</div>
+    <div class="dead-box-area">
+        <% @user.deads.each do |dead| %>
+        <div class="dead-box">
+            <%= link_to dead_path(dead) do %>
+            <%= attachment_image_tag dead, :dimage, fallback: "default_user_img.png", size: "150x150" %>
+            <h4><%= dead.name %></h4>
+            <% if current_user?(dead.user) %>
+                <%= link_to "削除する", dead, method: :delete, data: {confirm: "You sure?" } %>
+            <% end %>
+        <% end %>
+        </div>
+        <% end %>
+    </div>
+    <button class="button"><%= link_to "レターボックス作成はこちら", new_dead_path %></button>
 </div>

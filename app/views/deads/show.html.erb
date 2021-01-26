@@ -1,0 +1,67 @@
+<div class="top-contents-box">
+    <div class="ribbon1">故人のLetterBox</div>
+    <div class="profile-box">
+        <div class="profile-img-box">
+            <%= attachment_image_tag @dead, :dimage, fallback: "default_user_img.png", size: "150x150" %>
+            <%= link_to "故人の編集はこちら", edit_dead_path(@dead) %>
+        </div>
+        <div class="profile-info-box">
+            <h4>故人のお名前</h4>
+            <p><%= @dead.name %></p>
+        </div>
+    </div>
+    <div class="profile-caption-box">
+        <h4>故人の詳細</h4>
+        <p><%= @dead.caption %>むかし、むかし、あるところに浦島太郎という心やさしい漁師が住んでいました。
+ある日のこと、浜辺を歩いていると一匹の亀が子供達にいじめられているのを見ました。
+「これこれ、かめをいじめたらかわいそうだよ。はなしておやり」
+そう言って浦島太郎は子供たちから亀を助けてやりました。
+数日すぎたある日、浦島太郎がいつものようにつりをしていると亀が海から出てきて、
+「浦島太郎さん、僕はこの間あなたから助けられた亀です。お姫様があなたを竜宮城におつれしなさいというのでお迎えにまいりました。」
+「竜宮城へつれていってくれるのかい。それなら、少し行ってみようか。」
+浦島太郎はさっそく亀のこうらに乗ると海の中に入っていきました。
+竜宮城はさんごに囲まれ、魚が泳ぐ、それはそれは美しいお城でした。お姫様はそれはそれは美しいお方でした。
+「浦島太郎さん、亀をたすけてくれてありがとうございます。どうかごゆっくりしていって下さい。」
+太郎は、お城の中の大きな部屋に案内され、たくさんの豪華な料理をごちそうになりました。
+タイやヒラメやタコなどの魚たちが、太郎におどりを見せてくれました。
+浦島太郎は時間のたつのも忘れて楽しみました。
+まるで夢のような毎日でした。
+数日が過ぎ、浦島太郎は村のことやお母さんのことを思い出し、ついに別れの時がやってきました。
+別れぎわ、お姫様は浦島太郎に小さな箱を手渡しました。
+「もう7日も竜宮城にいたので、そろそろ家に帰ります。ありがとうございます。」
+「いつまでも、ここにいて欲しいのですが、しかたありません。では、この玉手箱を持っていってください。でも、この箱は決して開けてはいけませんよ」
+亀に乗って村に帰った浦島太郎は、どうしたことか自分の家もお母さんも見つけられず、村もすっかり変わっていました。
+どうしたらよいかわからなくなってしまい、玉手箱を開けてみることにしました。
+すると白いけむりが出てきて、浦島太郎はあっという間におじいさんになってしまいました。
+竜宮城で楽しく過ごしている間に、何百年も経ってしまったのです。
+浦島太郎は、今どこにいるのか、夢なのかわからなくなってしまいました。
+         </p>
+    </div>
+    <h4>故人への手紙一覧</h4>
+    <%= will_paginate @letters, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
+    <div class="letter-box-area">
+        <% @letters.each do |letter| %>
+            <div class="card card-skin">
+                <div class="card-textbox">
+                    <div class="card-titletext">
+                        <%= letter.name %>
+                    </div>
+                    <div class="card-overviewtext">
+                        <%= letter.caption %>昔々あるところに「ももたろう」を育てた
+                    </div>
+                     <% if letter.limage_id.present? %>
+                     <%= attachment_image_tag letter, :limage, fallback: "default_user_img.png", size: "200x200" %>
+                     <% end %>
+                     <% if current_user?(letter.dead.user) %>
+                     <div>
+                         <%= link_to "削除する", dead_letter_path(@dead,letter), method: :delete, data: {confirm: "You sure?" } %>
+                     </div>
+                     <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <%= will_paginate @letters, :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
+    </div>
+    <button class="button"><%= link_to "Letterの投稿はこちら", new_dead_letter_path(@dead) %></button>
+</div>

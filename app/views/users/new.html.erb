@@ -4,7 +4,7 @@
    <div class="form-box">
     <%= form_with(model: @user, local: true) do |f| %>
         
-        <%= render 'shared/error_messages' %>
+        <%= render 'shared/error_messages_user' %>
         
         <%= f.label :name, "ユーザー名" %>
         <%= f.text_field :name, class: 'form-control' %>
