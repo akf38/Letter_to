@@ -12,4 +12,3 @@ Rails.application.routes.draw do
     resources :letters, only: [:new, :create, :show, :destroy]
   end
 end
-
