@@ -56,7 +56,7 @@ header{
 .main-visual{
     width:100%;
     height: 400px;
-    background-image: image-url(img/main-visual1.jpg);
+    background-image: image-url("img/main-visual1.jpg");
     background-size: cover;
     background-position: center;
 }
